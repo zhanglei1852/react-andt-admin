@@ -1,0 +1,26 @@
+@import './../../style/variable.less';
+.NavLeft {
+  background: @menuBg;
+  height:100vh;
+  overflow: auto;
+  &::-webkit-scrollbar{
+    width: 5px;
+    background: rgba(255, 255, 255, 1);
+  }
+  &::-webkit-scrollbar-thumb {
+    width: 5px;
+    height: 10px;
+    background: rgba(51, 51, 51, 0.6);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+  .left-logo {
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 80px;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+ 
