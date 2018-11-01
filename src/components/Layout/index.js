@@ -4,27 +4,11 @@ import Header from './../Header'
 import NavLeft from './../NavLeft'
 import Content from './../Content'
 import { Row, Col } from 'antd'
-import './layout.less'
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 class Layout extends Component {
-
-  constructor (props) {
-    super(props)
-    this.state = {
-      show: false
-    }
-  }
-
-  componentDidMount () {
-    this.setState({
-      show: true
-    })
-  }
-
   render() {
     return (
-      <div onClick={ this.handleClick }>
+      <div>
         <Row>
           <Col span="3">
             <NavLeft></NavLeft>
@@ -32,17 +16,9 @@ class Layout extends Component {
           <Col span="21">
             <Header></Header>
             <Content >
-              <TransitionGroup>
-              <CSSTransition
-                  in={this.state.show}
-                  timeout={10000}
-                  classNames="pageFade"
-                  onEnter={ this.handleExit }
-                >
-                  {this.props.children}
-                </CSSTransition>
-              </TransitionGroup>
-                
+              { 
+                this.props.children
+              }
             </Content>
           </Col>
         </Row>
